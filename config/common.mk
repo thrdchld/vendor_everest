@@ -124,6 +124,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/everest/prebuilt/common/etc/init/init.everest-system_ext.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.everest-system_ext.rc
 
+# ViMusic
+TARGET_BUILD_VIMUSIC ?= false
+ifeq ($(TARGET_BUILD_VIMUSIC),true)
+PRODUCT_PACKAGES += \
+    ViMusic
+endif
+
+# InnerTune
+TARGET_BUILD_INNERTUNE ?= false
+ifeq ($(TARGET_BUILD_INNERTUNE),true)
+PRODUCT_PACKAGES += \
+    InnerTune
+endif
+
 #Themes OVerlay
 include packages/overlays/Themes/themes.mk
 
