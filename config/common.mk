@@ -138,7 +138,13 @@ PRODUCT_PACKAGES += \
     InnerTune
 endif
 
-#Themes OVerlay
+# Lawnchair
+ifneq ($(TARGET_USES_LAWNCHAIR), true)
+PRODUCT_COPY_FILES += \
+   $(call inherit-product-if-exists, vendor/lawnchair/lawnchair.mk)
+endif
+
+# Themes OVerlay
 include packages/overlays/Themes/themes.mk
 
 # Include Everest Branding
