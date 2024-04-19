@@ -126,3 +126,17 @@ PRODUCT_PACKAGES += \
 # TouchGestures
 PRODUCT_PACKAGES += \
     TouchGestures
+
+# OmniJaws
+PRODUCT_PACKAGES += \
+    OmniJaws
+
+# Launcher3
+TARGET_INCLUDE_LAUNCHER3 ?= true
+ifeq ($(TARGET_INCLUDE_LAUNCHER3),true)
+PRODUCT_PACKAGES += \
+    Launcher3QuickStep
+
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    Launcher3QuickStep
+endif
